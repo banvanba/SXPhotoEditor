@@ -118,7 +118,18 @@
 		D53252AE243D695800868E2D /* LFEditingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5325242243D695800868E2D /* LFEditingView.m */; };
 		D53252AF243D695800868E2D /* LFZoomingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5325243243D695800868E2D /* LFZoomingView.m */; };
 		D53252B0243D695800868E2D /* LFDataFilterImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5325247243D695800868E2D /* LFDataFilterImageView.m */; };
+		D5531D49243D76DC003EFDFA /* SXPhotoEditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5531D48243D76DC003EFDFA /* SXPhotoEditorTests.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D5531D4B243D76DC003EFDFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5325104243D683D00868E2D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D532510B243D683D00868E2D;
+			remoteInfo = SXPhotoEditor;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D532510C243D683D00868E2D /* SXPhotoEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SXPhotoEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -350,10 +361,20 @@
 		D5325245243D695800868E2D /* LFClippingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFClippingView.h; sourceTree = "<group>"; };
 		D5325247243D695800868E2D /* LFDataFilterImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFDataFilterImageView.m; sourceTree = "<group>"; };
 		D5325248243D695800868E2D /* LFDataFilterImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFDataFilterImageView.h; sourceTree = "<group>"; };
+		D5531D46243D76DC003EFDFA /* SXPhotoEditorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SXPhotoEditorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5531D48243D76DC003EFDFA /* SXPhotoEditorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoEditorTests.m; sourceTree = "<group>"; };
+		D5531D4A243D76DC003EFDFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D5325109243D683D00868E2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5531D43243D76DC003EFDFA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -367,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				D532510E243D683D00868E2D /* SXPhotoEditor */,
+				D5531D47243D76DC003EFDFA /* SXPhotoEditorTests */,
 				D532510D243D683D00868E2D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -375,6 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				D532510C243D683D00868E2D /* SXPhotoEditor.app */,
+				D5531D46243D76DC003EFDFA /* SXPhotoEditorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1190,6 +1213,15 @@
 			path = subView;
 			sourceTree = "<group>";
 		};
+		D5531D47243D76DC003EFDFA /* SXPhotoEditorTests */ = {
+			isa = PBXGroup;
+			children = (
+				D5531D48243D76DC003EFDFA /* SXPhotoEditorTests.m */,
+				D5531D4A243D76DC003EFDFA /* Info.plist */,
+			);
+			path = SXPhotoEditorTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1210,6 +1242,24 @@
 			productReference = D532510C243D683D00868E2D /* SXPhotoEditor.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D5531D45243D76DC003EFDFA /* SXPhotoEditorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5531D4F243D76DC003EFDFA /* Build configuration list for PBXNativeTarget "SXPhotoEditorTests" */;
+			buildPhases = (
+				D5531D42243D76DC003EFDFA /* Sources */,
+				D5531D43243D76DC003EFDFA /* Frameworks */,
+				D5531D44243D76DC003EFDFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5531D4C243D76DC003EFDFA /* PBXTargetDependency */,
+			);
+			name = SXPhotoEditorTests;
+			productName = SXPhotoEditorTests;
+			productReference = D5531D46243D76DC003EFDFA /* SXPhotoEditorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1221,6 +1271,10 @@
 				TargetAttributes = {
 					D532510B243D683D00868E2D = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					D5531D45243D76DC003EFDFA = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = D532510B243D683D00868E2D;
 					};
 				};
 			};
@@ -1238,6 +1292,7 @@
 			projectRoot = "";
 			targets = (
 				D532510B243D683D00868E2D /* SXPhotoEditor */,
+				D5531D45243D76DC003EFDFA /* SXPhotoEditorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1254,6 +1309,13 @@
 				D532511C243D683F00868E2D /* Assets.xcassets in Resources */,
 				D5325292243D695800868E2D /* LFTipsGuideView.bundle in Resources */,
 				D532511A243D683D00868E2D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5531D44243D76DC003EFDFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1371,7 +1433,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D5531D42243D76DC003EFDFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5531D49243D76DC003EFDFA /* SXPhotoEditorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D5531D4C243D76DC003EFDFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D532510B243D683D00868E2D /* SXPhotoEditor */;
+			targetProxy = D5531D4B243D76DC003EFDFA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D5325118243D683D00868E2D /* Main.storyboard */ = {
@@ -1537,6 +1615,48 @@
 			};
 			name = Release;
 		};
+		D5531D4D243D76DC003EFDFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N6BJ728QE2;
+				INFOPLIST_FILE = SXPhotoEditorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mycurrentmessenger.SXPhotoEditorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SXPhotoEditor.app/SXPhotoEditor";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
+			};
+			name = Debug;
+		};
+		D5531D4E243D76DC003EFDFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N6BJ728QE2;
+				INFOPLIST_FILE = SXPhotoEditorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mycurrentmessenger.SXPhotoEditorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SXPhotoEditor.app/SXPhotoEditor";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1554,6 +1674,15 @@
 			buildConfigurations = (
 				D5325126243D683F00868E2D /* Debug */,
 				D5325127243D683F00868E2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5531D4F243D76DC003EFDFA /* Build configuration list for PBXNativeTarget "SXPhotoEditorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5531D4D243D76DC003EFDFA /* Debug */,
+				D5531D4E243D76DC003EFDFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

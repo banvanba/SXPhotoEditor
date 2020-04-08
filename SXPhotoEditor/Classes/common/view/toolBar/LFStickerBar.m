@@ -97,7 +97,7 @@ CGFloat const lf_stickerMargin = 10;
 
 @property (nonatomic, weak) JRStickerDisplayView *stickerDisplayView;
 
-@property (strong, nonatomic) dispatch_queue_t concurrentQueue;
+@property (nonatomic) dispatch_queue_t concurrentQueue;
 
 /* 外置资源 */
 @property (nonatomic, assign) BOOL external;
@@ -160,7 +160,7 @@ CGFloat const lf_stickerMargin = 10;
 
 - (void)customInit
 {
-    _concurrentQueue = dispatch_queue_create("com.LFStickerBar.concurrentQueue", DISPATCH_QUEUE_CONCURRENT);
+    self.concurrentQueue = dispatch_queue_create("com.LFStickerBar.concurrentQueue", DISPATCH_QUEUE_CONCURRENT);
     if (@available(iOS 8.0, *)) {
         // 定义毛玻璃效果
         self.backgroundColor = [UIColor clearColor];

@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSString *dataPath;
 
 // 安全线程
-@property (nonatomic, strong) dispatch_queue_t serialQueue;
+@property (nonatomic) dispatch_queue_t serialQueue;
 
 @end
 
@@ -44,8 +44,8 @@
         if (!isExists || !isDirectory) {
             [fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
         }
-        _dataPath = [path stringByAppendingPathComponent:@"LFTipsGuide.plist"];
-        _serialQueue = dispatch_queue_create("LFTipsGuideManager.SerialQueue", DISPATCH_QUEUE_SERIAL);
+        self.dataPath = [path stringByAppendingPathComponent:@"LFTipsGuide.plist"];
+        self.serialQueue = dispatch_queue_create("LFTipsGuideManager.SerialQueue", DISPATCH_QUEUE_SERIAL);
         [self readData];
     }
     return self;

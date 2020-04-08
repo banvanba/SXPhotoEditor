@@ -21,7 +21,7 @@ CGFloat const JR_FilterBar_MAX_WIDTH = 100.f;
 @property (weak, nonatomic) UICollectionView *collectionView;
 @property (weak, nonatomic) UIView *backgroundView;
 
-@property (strong, nonatomic) dispatch_queue_t serialQueue;
+@property (nonatomic) dispatch_queue_t serialQueue;
 
 @end
 
@@ -32,7 +32,7 @@ CGFloat const JR_FilterBar_MAX_WIDTH = 100.f;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _serialQueue = dispatch_queue_create("com.JRFilterBar.SerialQueue", DISPATCH_QUEUE_SERIAL);
+        self.serialQueue = dispatch_queue_create("com.JRFilterBar.SerialQueue", DISPATCH_QUEUE_SERIAL);
         _list = @[].mutableCopy;
         _defaultColor = [UIColor grayColor];
         _selectColor = [UIColor blueColor];

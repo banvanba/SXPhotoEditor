@@ -64,7 +64,7 @@ inline static UIImageOrientation LFMEGifView_UIImageOrientationFromEXIFValue(NSI
 
 @property (nonatomic, assign) UIImageOrientation orientation;
 
-@property (nonatomic, strong) dispatch_queue_t serialQueue;
+@property (nonatomic) dispatch_queue_t serialQueue;
 
 @end
 
@@ -107,7 +107,7 @@ inline static UIImageOrientation LFMEGifView_UIImageOrientationFromEXIFValue(NSI
     _duration = 0.1f;
     _imageRefs = [NSMutableDictionary dictionary];
     _orientation = UIImageOrientationUp;
-    _serialQueue = dispatch_queue_create("LFMEGifViewSerial", DISPATCH_QUEUE_SERIAL);
+    self.serialQueue = dispatch_queue_create("LFMEGifViewSerial", DISPATCH_QUEUE_SERIAL);
 }
 
 - (void)dealloc
