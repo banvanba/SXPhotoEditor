@@ -90,10 +90,8 @@ NSString *const LFMediaEditingStrings = @"LFMediaEditingController";
         } else {
             localTable = [NSString stringWithFormat:@"%@_%@", LFMediaEditingStrings, @"en"];
         }
-        NSLog(@"+++++ babv localTable: %@", localTable);
     }
     
-    NSLog(@"+++++ babv localTable ha ha");
     value = [[self LF_mediaEditingBundle] localizedStringForKey:key value:value table:localTable];
     return [[NSBundle mainBundle] localizedStringForKey:key value:value table:localTable];
 }
