@@ -558,9 +558,12 @@ LFPhotoEditOperationStringKey const LFPhotoEditCropCanAspectRatioAttributeName =
     
     void (^finishImage)(UIImage *) = ^(UIImage *image){
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            if (data) {
+            if (image) {
                 photoEdit = [[LFPhotoEdit alloc] initWithEditImage:weakSelf.editImage previewImage:LFIC_UIImageDecodedCopy(image) durations:weakSelf.durations data:data];
+            } else {
+                photoEdit = [[LFPhotoEdit alloc] initWithEditImage:weakSelf.editImage previewImage:weakSelf.editImage durations:weakSelf.durations data:data];
             }
+            
             dispatch_async(dispatch_get_main_queue(), ^{
                 if ([weakSelf.delegate respondsToSelector:@selector(lf_PhotoEditingController:didFinishPhotoEdit:)]) {
                     [weakSelf.delegate lf_PhotoEditingController:self didFinishPhotoEdit:photoEdit];

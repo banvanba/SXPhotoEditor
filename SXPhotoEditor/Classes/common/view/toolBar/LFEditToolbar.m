@@ -682,7 +682,7 @@ NSUInteger kToolbar_MaxItems = 6;
     __weak typeof(self) weakSelf = self;
     for (NSInteger i=0; i<titles.count; i++) {
         NSString *title = titles[i];
-        if ([title isEqualToString:@"PhotoEditor.BrushEraser"]) {
+        if ([title isEqualToString:@"_LFME_brush_Eraser"]) {
             continue;
         }
         SPDropItem *item = [[SPDropItem alloc] init];
