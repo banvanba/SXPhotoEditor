@@ -79,13 +79,26 @@ NSString *const LFMediaEditingStrings = @"LFMediaEditingController";
     static NSString *localTable = nil;
     
     if (localTable == nil) {
-        NSArray *supportedLang = @[@"zh-Hant", @"zh-Hans", @"en", @"es", @"ko", @"it", @"pt", @"nl", @"de"];
+        NSArray *supportedLanguageCodes = @[@"zh-Hant", @"zh-Hans", @"en", @"es", @"ko", @"it", @"pt", @"nl", @"de"];
         
-        NSString *language = [[NSLocale preferredLanguages] firstObject];
-        NSArray *array = [language componentsSeparatedByString:@"-"];
-        NSString *languageCode = [array firstObject];
+        NSArray *languageCodes = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
+        NSString *languageCode = [languageCodes firstObject];
         
-        if (0 < [supportedLang indexOfObject:languageCode]) {
+        if (languageCode == nil) {
+            NSString *language = [[NSLocale preferredLanguages] firstObject];
+            NSArray *array = [language componentsSeparatedByString:@"-"];
+            languageCode = [array firstObject];
+        }
+
+        bool found = NO;
+        for(NSString *code in supportedLanguageCodes) {
+            if ([code isEqualToString:languageCode]) {
+                found = YES;
+                break;
+            }
+        }
+        
+        if (found) {
             localTable = [NSString stringWithFormat:@"%@_%@", LFMediaEditingStrings, languageCode];
         } else {
             localTable = [NSString stringWithFormat:@"%@_%@", LFMediaEditingStrings, @"en"];
