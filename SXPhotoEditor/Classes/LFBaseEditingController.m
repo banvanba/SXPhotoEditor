@@ -70,6 +70,8 @@
     [super viewWillAppear:animated];
     // 隐藏状态栏而不改变安全区域的高度
     [UIApplication sharedApplication].keyWindow.windowLevel = UIWindowLevelStatusBar + 1;
+
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -93,6 +95,8 @@
         // 重新开启下拉手势
         self.lf_dropShadowPanGestureRecognizer.enabled = YES;
     }
+
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)dealloc
